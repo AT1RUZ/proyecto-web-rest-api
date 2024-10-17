@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TransporteModule } from './transporte/transporte.module';
 import { TipoDeServicioModule } from './tipo_de_servicio/tipo_de_servicio.module';
+import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { TipoDeServicioModule } from './tipo_de_servicio/tipo_de_servicio.module
     }),
     TransporteModule,
     TipoDeServicioModule,
+    TipoDeAlimentoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

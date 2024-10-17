@@ -1,26 +1,44 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTipoDeServicioDto } from './dto/create-tipo_de_servicio.dto';
 import { UpdateTipoDeServicioDto } from './dto/update-tipo_de_servicio.dto';
+import { TipoDeServicio } from './entities/tipo_de_servicio.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class TipoDeServicioService {
-  create(createTipoDeServicioDto: CreateTipoDeServicioDto) {
-    return 'This action adds a new tipoDeServicio';
+  constructor(
+    @InjectRepository(TipoDeServicio)
+    private readonly tipoDeServicioRepository: Repository<TipoDeServicio>,
+  ) {}
+
+  create(
+    createTipoDeServicioDto: CreateTipoDeServicioDto,
+  ): Promise<TipoDeServicio> {
+    const servicio = new TipoDeServicio();
+    servicio.ID_Servicio = createTipoDeServicioDto.ID_Servicio;
+    servicio.Nombre_Servicio = createTipoDeServicioDto.Nombre_Servicio;
+
+    return this.tipoDeServicioRepository.save(servicio);
   }
 
-  findAll() {
-    return `This action returns all tipoDeServicio`;
+  findAll(): Promise<TipoDeServicio[]> {
+    return this.tipoDeServicioRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} tipoDeServicio`;
+  findOne(ID_Servicio: string): Promise<TipoDeServicio> {
+    return this.tipoDeServicioRepository.findOneBy({ ID_Servicio });
   }
 
-  update(id: number, updateTipoDeServicioDto: UpdateTipoDeServicioDto) {
-    return `This action updates a #${id} tipoDeServicio`;
+  update(id: string, updateTipoDeServicioDto: UpdateTipoDeServicioDto) {
+    const servicio = new TipoDeServicio();
+    servicio.ID_Servicio = id;
+    servicio.Nombre_Servicio = updateTipoDeServicioDto.Nombre_Servicio;
+
+    return this.tipoDeServicioRepository.save(servicio);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} tipoDeServicio`;
+  remove(ID_Servicio: string) {
+    return this.tipoDeServicioRepository.delete({ ID_Servicio });
   }
 }
