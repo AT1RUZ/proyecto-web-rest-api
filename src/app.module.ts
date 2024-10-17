@@ -22,13 +22,15 @@ import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        //synchronize: true //[para sincronizar con la base de datos , es decir la actualiza deacuerdo a las entidades que estan en el proyecto]
       }),
     }),
     TransporteModule,
     TipoDeServicioModule,
     TipoDeAlimentoModule,
+    UserModule 
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  //controllers: [AppController],
+  //providers: [AppService],
 })
 export class AppModule {}

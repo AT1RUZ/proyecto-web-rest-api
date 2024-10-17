@@ -37,7 +37,7 @@ export class UserController {
    * so the API URL will be
    * GET http://localhost:3000/user
    */
-  @Get()
+  @Get("")
   findAll() {
     return this.userService.findAllUser();
   }
