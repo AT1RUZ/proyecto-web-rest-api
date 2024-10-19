@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { TipoDeAlimentoService } from './tipo_de_alimento.service';
 import { CreateTipoDeAlimentoDto } from './dto/create-tipo_de_alimento.dto';
 import { UpdateTipoDeAlimentoDto } from './dto/update-tipo_de_alimento.dto';
@@ -19,16 +19,16 @@ export class TipoDeAlimentoController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tipoDeAlimentoService.findOne(+id);
+    return this.tipoDeAlimentoService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateTipoDeAlimentoDto: UpdateTipoDeAlimentoDto) {
-    return this.tipoDeAlimentoService.update(+id, updateTipoDeAlimentoDto);
+    return this.tipoDeAlimentoService.update(id, updateTipoDeAlimentoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tipoDeAlimentoService.remove(+id);
+    return this.tipoDeAlimentoService.remove(id);
   }
 }

@@ -27,6 +27,7 @@ import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module
     TransporteModule,
     TipoDeServicioModule,
     TipoDeAlimentoModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
