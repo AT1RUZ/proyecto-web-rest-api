@@ -28,15 +28,22 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  viewUser(id: number): Promise<User> {
+  viewUserID(id: number): Promise<User> {
     return this.userRepository.findOneBy({ id });
+  }
+
+  viewUserByUser(username: string): Promise<User>{
+    return this.userRepository.findOneBy({username})
+  }
+  viewUserByEmail(email: string): Promise<User>{
+    return this.userRepository.findOneBy({email})
   }
 
   updateUser(id: number, updateUserDto: UpdateUserDto): Promise<User> {
     const user: User = new User();
     user.id = id;
     user.name = updateUserDto.name;
-    user.lastname = updateUserDto.lastname
+    user.lastname = updateUserDto.lastname;
     user.username = updateUserDto.username;
     user.email = updateUserDto.email;
     user.age = updateUserDto.age;

@@ -11,8 +11,11 @@ import {
 import { TipoDeServicioService } from './tipo_de_servicio.service';
 import { CreateTipoDeServicioDto } from './dto/create-tipo_de_servicio.dto';
 import { UpdateTipoDeServicioDto } from './dto/update-tipo_de_servicio.dto';
+import { Auth } from 'src/auth/decorators/auth.decorators';
+import { Role } from 'src/auth/enums/role.enum';
 
 @Controller('tipo-de-servicio')
+@Auth(Role.ADMIN)
 export class TipoDeServicioController {
   constructor(private readonly tipoDeServicioService: TipoDeServicioService) {}
 

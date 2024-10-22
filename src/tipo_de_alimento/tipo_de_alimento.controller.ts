@@ -2,8 +2,11 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/
 import { TipoDeAlimentoService } from './tipo_de_alimento.service';
 import { CreateTipoDeAlimentoDto } from './dto/create-tipo_de_alimento.dto';
 import { UpdateTipoDeAlimentoDto } from './dto/update-tipo_de_alimento.dto';
+import { Auth } from 'src/auth/decorators/auth.decorators';
+import { Role } from 'src/auth/enums/role.enum';
 
 @Controller('tipo-de-alimento')
+@Auth(Role.ADMIN)
 export class TipoDeAlimentoController {
   constructor(private readonly tipoDeAlimentoService: TipoDeAlimentoService) {}
 

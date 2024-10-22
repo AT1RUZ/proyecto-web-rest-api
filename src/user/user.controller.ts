@@ -11,6 +11,10 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Auth } from 'src/auth/decorators/auth.decorators';
+import { Role } from 'src/auth/enums/role.enum';
+import { ActiveUser } from 'src/auth/decorators/active-user.decorator';
+import { ActiveUserInterface } from 'src/auth/interfaces/active-user.interface';
 
 /**
  * whatever the string pass in controller decorator it will be appended to
@@ -19,6 +23,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
  * in our case our base URL is http://localhost:3000/user
  */
 @Controller('user')
+
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -38,8 +43,13 @@ export class UserController {
    * so the API URL will be
    * GET http://localhost:3000/user
    */
+  @Auth(Role.ADMIN)
   @Get()
-  findAll() {
+  findAll(
+    @ActiveUser()
+    user: ActiveUserInterface,
+  ) {
+    console.log(user)
     return this.userService.findAllUser();
   }
 
@@ -49,8 +59,9 @@ export class UserController {
    * GET http://localhost:3000/user/:id
    */
   @Get(':id')
+  @Auth(Role.ADMIN)
   findOne(@Param('id') id: string) {
-    return this.userService.viewUser(+id);
+    return this.userService.viewUserID(+id);
   }
 
   /**
@@ -58,7 +69,7 @@ export class UserController {
    * so the API URL will be
    * PATCH http://localhost:3000/user/:id
    */
-  @Put(':id')
+  @Post(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.updateUser(+id, updateUserDto);
   }
@@ -69,7 +80,19 @@ export class UserController {
    * DELETE http://localhost:3000/user/:id
    */
   @Delete(':id')
+  @Auth(Role.ADMIN)
   remove(@Param('id') id: string) {
     return this.userService.removeUser(+id);
+  }
+
+  @Get(':user')
+  @Auth(Role.ADMIN)
+  findUser(@Param('user') user: string) {
+    return this.userService.viewUserByUser(user);
+  }
+  @Get(':email')
+  @Auth(Role.ADMIN)
+  findUserEmail(@Param('email') email: string) {
+    return this.userService.viewUserByEmail(email);
   }
 }

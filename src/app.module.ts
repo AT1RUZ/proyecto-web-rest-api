@@ -7,6 +7,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TransporteModule } from './transporte/transporte.module';
 import { TipoDeServicioModule } from './tipo_de_servicio/tipo_de_servicio.module';
 import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module';
+import { ProvinciaModule } from './provincia/provincia.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module
     TipoDeServicioModule,
     TipoDeAlimentoModule,
     UserModule,
+    ProvinciaModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
