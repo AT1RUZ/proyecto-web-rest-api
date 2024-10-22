@@ -21,7 +21,7 @@ export class TransporteController {
     return this.transporteService.create(createTransporteDto);
   }
 
-  @Get()
+  @Get("/all")
   findAll() {
     return this.transporteService.findAll();
   }
