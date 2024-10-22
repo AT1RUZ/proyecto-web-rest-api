@@ -9,6 +9,7 @@ import { TipoDeServicioModule } from './tipo_de_servicio/tipo_de_servicio.module
 import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module';
 import { ProvinciaModule } from './provincia/provincia.module';
 import { AuthModule } from './auth/auth.module';
+import { AnimalModule } from './Animal/Animal.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        //synchronize: true //[para sincronizar con la base de datos , es decir la actualiza deacuerdo a las entidades que estan en el proyecto]
       }),
     }),
     TransporteModule,
@@ -32,8 +34,10 @@ import { AuthModule } from './auth/auth.module';
     UserModule,
     ProvinciaModule,
     AuthModule,
+    AnimalModule,
+    UserModule 
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  //controllers: [AppController],
+  //providers: [AppService],
 })
 export class AppModule {}
