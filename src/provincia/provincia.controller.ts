@@ -25,7 +25,7 @@ export class ProvinciaController {
     return this.provinciaService.findOne(id);
   }
 
-  @Patch(':id')
+  @Post(':id')
   update(@Param('id') id: string, @Body() updateProvinciaDto: UpdateProvinciaDto) {
     return this.provinciaService.update(+id, updateProvinciaDto);
   }
