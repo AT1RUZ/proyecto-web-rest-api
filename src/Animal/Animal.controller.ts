@@ -10,7 +10,7 @@ export class AnimalController{
     constructor(private readonly animalService:AnimalService){}
 
     @Post()
-    create(@Body() createAnimal:CreateAnimal){
+    async create(@Body() createAnimal:CreateAnimal){
         return this.animalService.create(createAnimal)
     }
     @Get(":id")
@@ -26,7 +26,7 @@ export class AnimalController{
         return this.animalService.remove(id)
     }
     @Put(":id")
-    update(@Param("id")id:string,updateAnimal:UpdateAnimal){
+    update(@Param("id")id:string,@Body() updateAnimal:UpdateAnimal){
         return this.animalService.update(id,updateAnimal)
     }
 }

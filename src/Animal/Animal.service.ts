@@ -11,17 +11,18 @@ export class AnimalService {
     private readonly animalRepository: Repository<Animal>,
   ) {}
 
-  create(createAnimal: CreateAnimal): Promise<Animal> {
-    const animal: Animal = new Animal();
-    animal.Nombre = createAnimal.Nombre;
-    animal.Especie = createAnimal.Especie;
-    animal.Raza = createAnimal.Raza;
-    animal.Edad = createAnimal.Edad;
-    animal.Peso = createAnimal.Peso;
-    animal.Precio_Adopción = createAnimal.Precio_Adopción;
-    animal.Precio_Mantenimiento = createAnimal.Precio_Mantenimiento;
-    animal.Dias_Refugio = createAnimal.Dias_Refugio;
-    return this.animalRepository.save(animal);
+  async create(createAnimal: CreateAnimal): Promise<Animal> {
+    const anima: Animal = new Animal();
+    anima.ID_Animal=createAnimal.ID_Animal
+    anima.Nombre = createAnimal.Nombre;
+    anima.Especie = createAnimal.Especie;
+    anima.Raza = createAnimal.Raza;
+    anima.Edad = Number(createAnimal.Edad);
+    anima.Peso = Number(createAnimal.Peso);
+    anima.Precio_Adopción = Number(createAnimal.Precio_Adopción);
+    anima.Precio_Mantenimiento = Number(createAnimal.Precio_Mantenimiento);
+    anima.Dias_Refugio = Number(createAnimal.Dias_Refugio);
+    return this.animalRepository.save(anima);
   }
   findOne(ID_Animal: String): Promise<Animal> {
     return this.animalRepository.findOneBy({ ID_Animal });
@@ -31,16 +32,18 @@ export class AnimalService {
   }
 
   async update(ID_Animal: string, updateAnimal: UpdateAnimal): Promise<Animal> {
-    const animal: Animal = await this.animalRepository.findOneBy({ ID_Animal });
-    animal.Nombre = updateAnimal.Nombre;
-    animal.Especie = updateAnimal.Especie;
-    animal.Raza = updateAnimal.Raza;
-    animal.Edad = updateAnimal.Edad;
-    animal.Peso = updateAnimal.Peso;
-    animal.Precio_Adopción = updateAnimal.Precio_Adopción;
-    animal.Precio_Mantenimiento = updateAnimal.Precio_Mantenimiento;
-    animal.Dias_Refugio = updateAnimal.Dias_Refugio;
-    return this.animalRepository.save(animal);
+    //const animal: Animal = await this.animalRepository.findOneBy({ ID_Animal });
+    const anima:Animal= new Animal();
+    anima.ID_Animal=updateAnimal.ID_Animal;
+    anima.Nombre = updateAnimal.Nombre;
+    anima.Especie = updateAnimal.Especie;
+    anima.Raza = updateAnimal.Raza;
+    anima.Edad = updateAnimal.Edad;
+    anima.Peso = updateAnimal.Peso;
+    anima.Precio_Adopción = updateAnimal.Precio_Adopción;
+    anima.Precio_Mantenimiento = updateAnimal.Precio_Mantenimiento;
+    anima.Dias_Refugio = updateAnimal.Dias_Refugio;
+    return this.animalRepository.save(anima);
   }
   remove(ID_Animal:string){
     return this.animalRepository.delete(ID_Animal);
