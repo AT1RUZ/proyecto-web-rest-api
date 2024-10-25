@@ -10,6 +10,8 @@ import { TipoDeAlimentoModule } from './tipo_de_alimento/tipo_de_alimento.module
 import { ProvinciaModule } from './provincia/provincia.module';
 import { AuthModule } from './auth/auth.module';
 import { AnimalModule } from './Animal/Animal.module';
+import { DonacionModule } from './Donaciones/Donaciones.module';
+import { AdopcionModule } from './Adopciones/Adopcion.module';
 
 @Module({
   imports: [
@@ -35,7 +37,9 @@ import { AnimalModule } from './Animal/Animal.module';
     ProvinciaModule,
     AuthModule,
     AnimalModule,
-    UserModule 
+    UserModule, 
+    DonacionModule,
+    AdopcionModule
   ],
   //controllers: [AppController],
   //providers: [AppService],
