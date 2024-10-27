@@ -26,23 +26,10 @@ import { ActiveUserInterface } from 'src/auth/interfaces/active-user.interface';
 
 export class UserController {
   constructor(private readonly userService: UserService) {}
-
-  /**
-   * Post decorator represents method of request as we have used post decorator the method
-   * of this API will be post.
-   * so the API URL to create User will be
-   * POST http://localhost:3000/user
-   */
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
-
-  /**
-   * we have used get decorator to get all the user's list
-   * so the API URL will be
-   * GET http://localhost:3000/user
-   */
   @Auth(Role.ADMIN)
   @Get()
   findAll(
@@ -52,23 +39,12 @@ export class UserController {
     console.log(user)
     return this.userService.findAllUser();
   }
-
-  /**
-   * we have used get decorator with id param to get id from request
-   * so the API URL will be
-   * GET http://localhost:3000/user/:id
-   */
-  @Get(':id')
-  @Auth(Role.ADMIN)
-  findOne(@Param('id') id: string) {
-    return this.userService.viewUserID(+id);
-  }
-
-  /**
-   * we have used patch decorator with id param to get id from request
-   * so the API URL will be
-   * PATCH http://localhost:3000/user/:id
-   */
+  // @Get(':id')
+  // @Auth(Role.ADMIN)
+  // findOne(@Param('id') id: string) {
+  //   console.log("USER BY ID")
+  //   return this.userService.viewUserID(+id);
+  // }
   @Post(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.updateUser(+id, updateUserDto);
@@ -85,14 +61,16 @@ export class UserController {
     return this.userService.removeUser(+id);
   }
 
-  @Get(':user')
-  @Auth(Role.ADMIN)
-  findUser(@Param('user') user: string) {
-    return this.userService.viewUserByUser(user);
-  }
+  // @Get(':user')
+  // @Auth(Role.ADMIN)
+  // findUser(@Param('user') user: string) {
+  //   return this.userService.viewUserByUser(user);
+  // }
+
   @Get(':email')
   @Auth(Role.ADMIN)
   findUserEmail(@Param('email') email: string) {
+    console.log("USER BY EMAIL")
     return this.userService.viewUserByEmail(email);
   }
 }
