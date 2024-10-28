@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryColumn } from "typeorm";
 
-@Entity("Tipo_de_servicio")//aki se tiene que poner igual que en la tabla de la base de datos
+@Entity("tipo_de_servicio")//aki se tiene que poner igual que en la tabla de la base de datos
 export class TipoDeServicio {
     @PrimaryColumn({type: 'varchar'})
     ID_Servicio: string;
