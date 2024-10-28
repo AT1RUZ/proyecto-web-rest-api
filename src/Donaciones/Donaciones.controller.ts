@@ -8,7 +8,7 @@ export class DonacionController{
     constructor(private readonly donacionService: DonacionService) {}
 
 
-    @Get("")
+    @Get()
     findAll(){
         return this.donacionService.findAll()
     }
