@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { AnimalModule } from './Animal/Animal.module';
 import { DonacionModule } from './Donaciones/Donaciones.module';
 import { AdopcionModule } from './Adopciones/Adopcion.module';
+import { ActividadModule } from './Actividades/Actividades.module';
 
 @Module({
   imports: [
@@ -39,7 +40,8 @@ import { AdopcionModule } from './Adopciones/Adopcion.module';
     AnimalModule,
     UserModule, 
     DonacionModule,
-    AdopcionModule
+    AdopcionModule,
+    ActividadModule
   ],
   //controllers: [AppController],
   //providers: [AppService],
