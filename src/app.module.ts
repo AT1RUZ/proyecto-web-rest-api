@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { AnimalModule } from './Animal/Animal.module';
 import { DonacionModule } from './Donaciones/Donaciones.module';
 import { AdopcionModule } from './Adopciones/Adopcion.module';
+import { ActividadModule } from './Actividades/Actividades.module';
 import { VeterinariosModule } from './veterinarios/veterinarios.module';
 
 @Module({
@@ -41,6 +42,7 @@ import { VeterinariosModule } from './veterinarios/veterinarios.module';
     UserModule, 
     DonacionModule,
     AdopcionModule,
+    ActividadModule,
     VeterinariosModule
   ],
   //controllers: [AppController],
