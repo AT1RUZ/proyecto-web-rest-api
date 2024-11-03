@@ -8,6 +8,7 @@ export class Actividad{
     Descripción_Actividad: string;
     @Column({type:"double precision"})
     Precio:number;
+    @Column({type:"double precision"})
     Precio_Transporte:number;
     @Column({type:"varchar"})
     ID_Animal:string;
