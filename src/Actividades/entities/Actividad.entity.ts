@@ -21,6 +21,6 @@ export class Actividad{
     ID_Transporte:string
     @Column({type:"date"})
     Dia:Date;
-    @Column({type:"time"})
-    Hora:TimeRanges;
+    @Column({type:"time with time zone"})
+    Hora:number;
 }

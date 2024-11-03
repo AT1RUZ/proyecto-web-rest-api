@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsNumber, IsString, Min } from "class-validator";
+import { IsDate, IsNotEmpty, IsNumber, IsString, IsTimeZone, Min } from "class-validator";
 
 export class CreateActividad {
     @IsNotEmpty()
@@ -44,6 +44,6 @@ export class CreateActividad {
     Dia: Date;
 
     @IsNotEmpty()
-    @IsDate()
-    Hora: TimeRanges;
+    @IsTimeZone()
+    Hora: number;
 }

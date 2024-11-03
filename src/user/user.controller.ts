@@ -22,21 +22,22 @@ import { ActiveUserInterface } from 'src/auth/interfaces/active-user.interface';
  * passed in controller decorator.
  * in our case our base URL is http://localhost:3000/user
  */
-@Controller('user')
 
+@Controller('user')
+@Auth(Role.USER_ADMIN)
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
-  @Auth(Role.ADMIN)
+
   @Get()
   findAll(
     @ActiveUser()
     user: ActiveUserInterface,
   ) {
-    console.log(user)
+    console.log(user);
     return this.userService.findAllUser();
   }
   // @Get(':id')
@@ -56,7 +57,6 @@ export class UserController {
    * DELETE http://localhost:3000/user/:id
    */
   @Delete(':id')
-  @Auth(Role.ADMIN)
   remove(@Param('id') id: string) {
     return this.userService.removeUser(+id);
   }
@@ -68,9 +68,8 @@ export class UserController {
   // }
 
   @Get(':email')
-  @Auth(Role.ADMIN)
   findUserEmail(@Param('email') email: string) {
-    console.log("USER BY EMAIL")
+    console.log('USER BY EMAIL');
     return this.userService.viewUserByEmail(email);
   }
 }
