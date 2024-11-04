@@ -30,6 +30,8 @@
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "nest-next": "^10.1.0",
     "pg": "^8.13.0",
     "reflect-metadata": "^0.2.0",
