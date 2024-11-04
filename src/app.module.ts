@@ -45,7 +45,7 @@ import { VeterinariosModule } from './veterinarios/veterinarios.module';
     ActividadModule,
     VeterinariosModule
   ],
-  //controllers: [AppController],
-  //providers: [AppService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
