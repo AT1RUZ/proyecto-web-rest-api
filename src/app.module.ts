@@ -14,6 +14,10 @@ import { DonacionModule } from './Donaciones/Donaciones.module';
 import { AdopcionModule } from './Adopciones/Adopcion.module';
 import { ActividadModule } from './Actividades/Actividades.module';
 import { VeterinariosModule } from './veterinarios/veterinarios.module';
+import { ProveedorServiciosComplementariosModule } from './proveedor_servicios_complementarios/proveedor_servicios_complementarios.module';
+import { ProveedoresAlimentosModule } from './proveedores_alimentos/proveedores_alimentos.module';
+import { ContratadoModule } from './contratado/contratado.module';
+import { ContratosModule } from './contrato/contrato.module';
 
 @Module({
   imports: [
@@ -43,7 +47,11 @@ import { VeterinariosModule } from './veterinarios/veterinarios.module';
     DonacionModule,
     AdopcionModule,
     ActividadModule,
-    VeterinariosModule
+    VeterinariosModule,
+    ProveedorServiciosComplementariosModule,
+    ProveedoresAlimentosModule,
+    ContratadoModule,
+    ContratosModule
   ],
   //controllers: [AppController],
   //providers: [AppService],
