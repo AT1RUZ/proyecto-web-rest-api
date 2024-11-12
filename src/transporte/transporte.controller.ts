@@ -20,7 +20,6 @@ export class TransporteController {
   constructor(private readonly transporteService: TransporteService) {}
 
   @Post()
-  
   create(@Body() createTransporteDto: CreateTransporteDto) {
     return this.transporteService.create(createTransporteDto);
   }

@@ -14,6 +14,7 @@ import { DonacionModule } from './Donaciones/Donaciones.module';
 import { AdopcionModule } from './Adopciones/Adopcion.module';
 import { ActividadModule } from './Actividades/Actividades.module';
 import { VeterinariosModule } from './veterinarios/veterinarios.module';
+import { ContratosModule } from './contratos/contratos.module';
 
 @Module({
   imports: [
@@ -43,7 +44,8 @@ import { VeterinariosModule } from './veterinarios/veterinarios.module';
     DonacionModule,
     AdopcionModule,
     ActividadModule,
-    VeterinariosModule
+    VeterinariosModule,
+    ContratosModule
   ],
   controllers: [AppController],
   providers: [AppService],
