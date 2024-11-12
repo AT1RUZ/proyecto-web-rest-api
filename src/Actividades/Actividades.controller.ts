@@ -10,7 +10,7 @@ export class ActividadController{
 
     @Get()
     async getAll() {
-        return this.actividadService.findAll
+        return this.actividadService.findAll()
     }
     @Get(":id")
     finOne(@Param("id")id:string){

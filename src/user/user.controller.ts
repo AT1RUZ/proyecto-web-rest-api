@@ -46,7 +46,7 @@ export class UserController {
   //   console.log("USER BY ID")
   //   return this.userService.viewUserID(+id);
   // }
-  @Post(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.updateUser(+id, updateUserDto);
   }

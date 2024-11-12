@@ -15,29 +15,29 @@ import { Auth } from 'src/auth/decorators/auth.decorators';
 import { Role } from 'src/auth/enums/role.enum';
 
 @Controller('transporte')
+@Auth(Role.ADMIN)
 export class TransporteController {
   constructor(private readonly transporteService: TransporteService) {}
 
   @Post()
-  @Auth(Role.ADMIN)
   create(@Body() createTransporteDto: CreateTransporteDto) {
     return this.transporteService.create(createTransporteDto);
   }
 
   @Get()
-  @Auth(Role.ADMIN)
+  
   findAll() {
     return this.transporteService.findAll();
   }
 
   @Get(':id')
-  @Auth(Role.ADMIN)
+  
   findOne(@Param('id') id: string) {
     return this.transporteService.findOne(id);
   }
 
   @Put(':id')
-  @Auth(Role.ADMIN)
+  
   update(
     @Param('id') id: string,
     @Body() updateTransporteDto: UpdateTransporteDto,

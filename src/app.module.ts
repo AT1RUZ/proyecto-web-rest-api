@@ -47,13 +47,9 @@ import { ContratosModule } from './contrato/contrato.module';
     DonacionModule,
     AdopcionModule,
     ActividadModule,
-    VeterinariosModule,
-    ProveedorServiciosComplementariosModule,
-    ProveedoresAlimentosModule,
-    ContratadoModule,
-    ContratosModule
+    VeterinariosModule
   ],
-  //controllers: [AppController],
-  //providers: [AppService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
