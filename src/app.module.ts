@@ -47,7 +47,7 @@ import { ContratosModule } from './contratos/contratos.module';
     VeterinariosModule,
     ContratosModule
   ],
-  //controllers: [AppController],
-  //providers: [AppService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
