@@ -6,6 +6,7 @@ import { ListadoContratosServiciosComplementarios } from './entities/contratos-p
 import { PlanIngresoAdopcionesDonaciones } from './entities/plan_ingresos_adopciones_donaciones.entity';
 import { ProgramaActividadesAnimal } from './entities/programa_actividades_animal.entity';
 
+
 @Injectable()
 export class ContratosService {
   constructor(
