@@ -14,5 +14,6 @@ import { ContratosController } from './contratos.controller';
   ],
   controllers: [ContratosController],
   providers: [ContratosService],
+  exports: [ContratosService],
 })
-export class ContratosModule {}
+export class ListadosModule {}

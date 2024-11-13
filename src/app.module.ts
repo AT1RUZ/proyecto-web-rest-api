@@ -18,6 +18,7 @@ import { ProveedorServiciosComplementariosModule } from './proveedor_servicios_c
 import { ProveedoresAlimentosModule } from './proveedores_alimentos/proveedores_alimentos.module';
 import { ContratadoModule } from './contratado/contratado.module';
 import { ContratosModule } from './contrato/contrato.module';
+import { ListadosModule } from './contratos/contratos.module';
 
 @Module({
   imports: [
@@ -47,7 +48,9 @@ import { ContratosModule } from './contrato/contrato.module';
     DonacionModule,
     AdopcionModule,
     ActividadModule,
-    VeterinariosModule
+    VeterinariosModule,
+    ContratosModule,
+    ListadosModule
   ],
   controllers: [AppController],
   providers: [AppService],
