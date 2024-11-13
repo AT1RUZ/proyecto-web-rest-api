@@ -18,4 +18,12 @@ export class ContratosController {
   findAllPSC() {
     return this.contratoService.getListadoContratosServiciosComplementarios();
   }
+  @Get('/programa-actividades-animal')
+  findAllPAA() {
+    return this.contratoService.getListadoProgramaActividadesAnimal;
+  }
+  @Get('/plan-ingreso-adopciones-donaciones')
+  findAllPIAD() {
+    return this.contratoService.getListadoPlanIngresoAdopcionesDonaciones();
+  }
 }
