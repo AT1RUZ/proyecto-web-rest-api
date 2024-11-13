@@ -40,12 +40,11 @@ export class UserController {
     console.log(user);
     return this.userService.findAllUser();
   }
-  // @Get(':id')
-  // @Auth(Role.ADMIN)
-  // findOne(@Param('id') id: string) {
-  //   console.log("USER BY ID")
-  //   return this.userService.viewUserID(+id);
-  // }
+  @Get('/id/:id')
+  findOne(@Param('id') id: string) {
+    console.log('USER BY ID');
+    return this.userService.viewUserID(+id);
+  }
   @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.updateUser(+id, updateUserDto);

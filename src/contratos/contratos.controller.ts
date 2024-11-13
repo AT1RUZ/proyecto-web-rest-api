@@ -3,7 +3,7 @@ import { Auth } from 'src/auth/decorators/auth.decorators';
 import { Role } from 'src/auth/enums/role.enum';
 import { ContratosService } from './contratos.service';
 
-@Controller('contratos')
+@Controller('listado/contratos')
 @Auth(Role.ADMIN)
 export class ContratosController {
   constructor(private readonly contratoService: ContratosService) {}
