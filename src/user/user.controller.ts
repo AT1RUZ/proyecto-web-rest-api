@@ -24,15 +24,17 @@ import { ActiveUserInterface } from 'src/auth/interfaces/active-user.interface';
  */
 
 @Controller('user')
-@Auth(Role.USER_ADMIN)
+
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Post()
+  @Auth(Role.USER_ADMIN)
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
 
   @Get()
+  @Auth(Role.USER_ADMIN)
   findAll(
     @ActiveUser()
     user: ActiveUserInterface,
@@ -41,11 +43,13 @@ export class UserController {
     return this.userService.findAllUser();
   }
   @Get('/id/:id')
+  @Auth(Role.USER_ADMIN)
   findOne(@Param('id') id: string) {
     console.log('USER BY ID');
     return this.userService.viewUserID(+id);
   }
   @Put(':id')
+  @Auth(Role.USER_ADMIN)
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.updateUser(+id, updateUserDto);
   }
@@ -56,8 +60,14 @@ export class UserController {
    * DELETE http://localhost:3000/user/:id
    */
   @Delete(':id')
+  @Auth(Role.USER_ADMIN)
   remove(@Param('id') id: string) {
     return this.userService.removeUser(+id);
+  }
+
+  @Get("/register/:email")
+  findOneEmailRegister(@Param('email') email: string) {
+    return this.userService.viewUserByEmail(email);
   }
 
   // @Get(':user')
@@ -67,6 +77,7 @@ export class UserController {
   // }
 
   @Get(':email')
+  @Auth(Role.USER_ADMIN)
   findUserEmail(@Param('email') email: string) {
     console.log('USER BY EMAIL');
     return this.userService.viewUserByEmail(email);
