@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ListadoContratosProveedoresAlimentos } from './entities/contratos-proveedores-alimentos.entity';
 import { ListadoContratosServiciosComplementarios } from './entities/contratos-proveedores-servicios-complementarios.entity';
+import { PlanIngresoAdopcionesDonaciones } from './entities/plan_ingresos_adopciones_donaciones.entity';
 
 @Injectable()
 export class ContratosService {
@@ -27,7 +28,7 @@ export class ContratosService {
     );
     return results.map(result => this.contratosSCRepository.create(result));
   }
-  async getListadoPlanIngresoAdopcionesDonaciones():Promise<ListadoContratosServiciosComplementarios[]>{
+  async getListadoPlanIngresoAdopcionesDonaciones():Promise<PlanIngresoAdopcionesDonaciones[]>{
     const results =await this.contratosPARepository.query(
       'SELECT * FROM plan_ingresos_adopciones_donaciones()',
     )
