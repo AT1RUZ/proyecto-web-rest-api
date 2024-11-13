@@ -27,4 +27,17 @@ export class ContratosService {
     );
     return results.map(result => this.contratosSCRepository.create(result));
   }
+  async getListadoPlanIngresoAdopcionesDonaciones():Promise<ListadoContratosServiciosComplementarios[]>{
+    const results =await this.contratosPARepository.query(
+      'SELECT * FROM plan_ingresos_adopciones_donaciones()',
+    )
+    return results.map(result=>this.contratosSCRepository.create(result));
+  }
+  async getListadoProgramaActividadesAnimal(ID_Animal:String):Promise<ListadoContratosServiciosComplementarios[]>{
+    const results =await this.contratosPARepository.query(
+      'SELECT * FROM programa_actividades_animal($1)',
+      [ID_Animal]
+    )
+    return results.map(result=>this.contratosSCRepository.create(result));
+  }
 }
