@@ -47,7 +47,8 @@ import { ContratosModule } from './contrato/contrato.module';
     DonacionModule,
     AdopcionModule,
     ActividadModule,
-    VeterinariosModule
+    VeterinariosModule,
+    ContratosModule
   ],
   controllers: [AppController],
   providers: [AppService],
