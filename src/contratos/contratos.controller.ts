@@ -4,7 +4,7 @@ import { Role } from 'src/auth/enums/role.enum';
 import { ContratosService } from './contratos.service';
 
 @Controller('/rep')
-//@Auth(Role.ADMIN)
+@Auth(Role.ADMIN)
 export class ContratosController {
   constructor(private readonly contratoService: ContratosService) {}
 
