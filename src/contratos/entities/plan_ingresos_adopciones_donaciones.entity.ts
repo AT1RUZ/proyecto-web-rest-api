@@ -5,11 +5,11 @@ export class PlanIngresoAdopcionesDonaciones {
   @PrimaryGeneratedColumn()
   id: number;
   @Column({ type: 'varchar' })
-  nombre_animal: String;
+  nombre_animal: string;
   @Column({ type: 'varchar' })
-  especie: String;
+  especie: string;
   @Column({ type: 'varchar' })
-  raza: String;
+  raza: string;
   @Column({ type: 'int' })
   edad: number;
   @Column({ type: 'double precision' })

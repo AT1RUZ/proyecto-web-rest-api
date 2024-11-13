@@ -1,10 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Auth } from 'src/auth/decorators/auth.decorators';
 import { Role } from 'src/auth/enums/role.enum';
 import { ContratosService } from './contratos.service';
 
-@Controller('/listados/contratos')
-@Auth(Role.ADMIN)
+@Controller('/rep')
+//@Auth(Role.ADMIN)
 export class ContratosController {
   constructor(private readonly contratoService: ContratosService) {}
 
@@ -18,9 +18,9 @@ export class ContratosController {
   findAllPSC() {
     return this.contratoService.getListadoContratosServiciosComplementarios();
   }
-  @Get('/programa-actividades-animal')
-  findAllPAA() {
-    return this.contratoService.getListadoProgramaActividadesAnimal;
+  @Get('/programa-actividades-animal/:id')
+  findAllPAA(@Param('id')id:string) {
+    return this.contratoService.getListadoProgramaActividadesAnimal(id);
   }
   @Get('/plan-ingreso-adopciones-donaciones')
   findAllPIAD() {

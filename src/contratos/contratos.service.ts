@@ -3,6 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ListadoContratosProveedoresAlimentos } from './entities/contratos-proveedores-alimentos.entity';
 import { ListadoContratosServiciosComplementarios } from './entities/contratos-proveedores-servicios-complementarios.entity';
+import { PlanIngresoAdopcionesDonaciones } from './entities/plan_ingresos_adopciones_donaciones.entity';
+import { ProgramaActividadesAnimal } from './entities/programa_actividades_animal.entity';
 
 @Injectable()
 export class ContratosService {
@@ -10,7 +12,11 @@ export class ContratosService {
     @InjectRepository(ListadoContratosProveedoresAlimentos)
     private readonly contratosPARepository: Repository<ListadoContratosProveedoresAlimentos>,
     @InjectRepository(ListadoContratosServiciosComplementarios)
-    private readonly  contratosSCRepository: Repository<ListadoContratosServiciosComplementarios>
+    private readonly  contratosSCRepository: Repository<ListadoContratosServiciosComplementarios>,
+    @InjectRepository(PlanIngresoAdopcionesDonaciones)
+    private readonly planADRepository: Repository<PlanIngresoAdopcionesDonaciones>,
+    @InjectRepository(ProgramaActividadesAnimal)
+    private readonly programaAARepository: Repository<ProgramaActividadesAnimal>
 
   ) {}
 
@@ -27,17 +33,17 @@ export class ContratosService {
     );
     return results.map(result => this.contratosSCRepository.create(result));
   }
-  async getListadoPlanIngresoAdopcionesDonaciones():Promise<ListadoContratosServiciosComplementarios[]>{
+  async getListadoPlanIngresoAdopcionesDonaciones():Promise<PlanIngresoAdopcionesDonaciones[]>{
     const results =await this.contratosPARepository.query(
       'SELECT * FROM plan_ingresos_adopciones_donaciones()',
     )
-    return results.map(result=>this.contratosSCRepository.create(result));
+    return results.map(result=>this.planADRepository.create(result));
   }
-  async getListadoProgramaActividadesAnimal(ID_Animal:String):Promise<ListadoContratosServiciosComplementarios[]>{
+  async getListadoProgramaActividadesAnimal(ID_Animal:String):Promise<ProgramaActividadesAnimal[]>{
     const results =await this.contratosPARepository.query(
       'SELECT * FROM programa_actividades_animal($1)',
       [ID_Animal]
     )
-    return results.map(result=>this.contratosSCRepository.create(result));
+    return results.map(result=>this.programaAARepository.create(result));
   }
 }
