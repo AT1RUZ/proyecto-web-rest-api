@@ -19,6 +19,7 @@ import { ProveedoresAlimentosModule } from './proveedores_alimentos/proveedores_
 import { ContratadoModule } from './contratado/contratado.module';
 import { ContratosModule } from './contrato/contrato.module';
 import { ListadosModule } from './contratos/contratos.module';
+import { SendEmail } from './send/send.module';
 
 @Module({
   imports: [
@@ -50,7 +51,8 @@ import { ListadosModule } from './contratos/contratos.module';
     ActividadModule,
     VeterinariosModule,
     ContratosModule,
-    ListadosModule
+    ListadosModule,
+    SendEmail
   ],
   controllers: [AppController],
   providers: [AppService],
