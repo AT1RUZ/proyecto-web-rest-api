@@ -4,11 +4,7 @@ export class CreateContratoDto {
     
     @IsNotEmpty()
     @IsString()
-    Codigo_Contrato: string;
-
-  @IsNotEmpty()
-  @IsString()
-  Tipo_Contrato: string;
+    Código_Contrato: string;
 
   @IsNotEmpty()
   @IsString()
@@ -16,11 +12,11 @@ export class CreateContratoDto {
 
   @IsNotEmpty()
   @IsString()
-  Dirección: string;
+  Direccion: string;
 
   @IsNotEmpty()
   @IsNumber()
-  Teléfono: number;
+  Telefono: number;
 
   @IsNotEmpty()
   @IsString()
@@ -40,9 +36,9 @@ export class CreateContratoDto {
 
   @IsNotEmpty()
   @IsDate()
-  Fecha_Consiliacion: Date;
+  Fecha_Conciliacion: Date;
 
   @IsNotEmpty()
   @IsString()
-  Descripcion: string;
+  Descripción: string;
 }

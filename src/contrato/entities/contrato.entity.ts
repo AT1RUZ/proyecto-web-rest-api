@@ -1,22 +1,19 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryColumn, Column, OneToMany } from 'typeorm';
 import { Contratado } from '../../contratado/entities/contratado.entity';
 
-@Entity()
+@Entity('Contratos')
 export class Contrato {
-  @PrimaryGeneratedColumn()
-  Codigo_Contrato: string;
-
-  @Column()
-  Tipo_Contrato: string;
+  @PrimaryColumn()
+  Código_Contrato: string;
 
   @Column()
   Tipo_Servicio: string;
 
   @Column()
-  Dirección: string;
+  Direccion: string;
 
   @Column()
-  Teléfono: number;
+  Telefono: number;
 
   @Column()
   Email: string;
@@ -31,10 +28,10 @@ export class Contrato {
   Fecha_Terminacion: Date;
 
   @Column('date')
-  Fecha_Consiliacion: Date;
+  Fecha_Conciliacion: Date;
 
   @Column()
-  Descripcion: string;
+  Descripción: string;
 
   
 }

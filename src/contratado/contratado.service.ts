@@ -14,7 +14,7 @@ export class ContratadosService {
 
   create(createContratadoDto: CreateContratadoDto): Promise<Contratado> {
     const contratado: Contratado = new Contratado();
-    contratado.Codigo_Contrato = createContratadoDto.Codigo_Contrato;
+    contratado.Código_Contrato = createContratadoDto.Código_Contrato;
     contratado.ID_Provincia = createContratadoDto.ID_Provincia;
     contratado.ID_Contratado = createContratadoDto.ID_Contratado;
 
@@ -32,7 +32,7 @@ export class ContratadosService {
   update(ID_Contratado: string, updateContratadoDto: UpdateContratadoDto): Promise<Contratado> {
     const contratado: Contratado = new Contratado();
     contratado.ID_Contratado = ID_Contratado;
-    contratado.Codigo_Contrato = updateContratadoDto.Codigo_Contrato;
+    contratado.Código_Contrato = updateContratadoDto.Código_Contrato;
     contratado.ID_Provincia = updateContratadoDto.ID_Provincia;
     
 
