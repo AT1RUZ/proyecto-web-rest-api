@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete,Put } from '@nestjs/common';
 import { ProveedoresAlimentoService } from './proveedores_alimentos.service';
 import { CreateProveedoresAlimentoDto } from './dto/create-proveedores_alimento.dto';
 import { UpdateProveedoresAlimentoDto } from './dto/update-proveedores_alimento.dto';
@@ -28,7 +28,7 @@ export class ProveedoresAlimentosController {
   }
 
   //@Auth(Role.ADMIN)
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateProveedoresAlimentoDto: UpdateProveedoresAlimentoDto) {
     return this.proveedoresAlimentosService.update(id, updateProveedoresAlimentoDto);
   }

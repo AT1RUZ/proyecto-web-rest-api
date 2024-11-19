@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { ProveedorServiciosComplementarioService } from './proveedor_servicios_complementarios.service';
 import { CreateProveedorServiciosComplementarioDto } from './dto/create-proveedor_servicios_complementario.dto';
 import { UpdateProveedorServiciosComplementarioDto } from './dto/update-proveedor_servicios_complementario.dto';

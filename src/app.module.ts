@@ -52,9 +52,11 @@ import { SendEmail } from './send/send.module';
     VeterinariosModule,
     ContratosModule,
     ListadosModule,
+    SendEmail,
     ContratadoModule,
     ProveedorServiciosComplementariosModule,
     ProveedoresAlimentosModule
+
   ],
   controllers: [AppController],
   providers: [AppService],
