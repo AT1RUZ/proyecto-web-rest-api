@@ -17,7 +17,6 @@ export class ProveedoresAlimentoService {
     proveedoresAlimento.ID_Contratado = createProveedoresAlimentoDto.ID_Contratado;
     proveedoresAlimento.Nombre_Proveedor = createProveedoresAlimentoDto.Nombre_Proveedor;
     proveedoresAlimento.Dirección = createProveedoresAlimentoDto.Dirección;
-    proveedoresAlimento.Teléfono = createProveedoresAlimentoDto.Teléfono;
     proveedoresAlimento.Email = createProveedoresAlimentoDto.Email;
     proveedoresAlimento.ID_Alimento = createProveedoresAlimentoDto.ID_Alimento;
 
@@ -37,7 +36,6 @@ export class ProveedoresAlimentoService {
     proveedoresAlimento.ID_Contratado = ID_Contratado;
     proveedoresAlimento.Nombre_Proveedor = updateProveedoresAlimentoDto.Nombre_Proveedor;
     proveedoresAlimento.Dirección = updateProveedoresAlimentoDto.Dirección;
-    proveedoresAlimento.Teléfono = updateProveedoresAlimentoDto.Teléfono;
     proveedoresAlimento.Email = updateProveedoresAlimentoDto.Email;
     proveedoresAlimento.ID_Alimento = updateProveedoresAlimentoDto.ID_Alimento;
 

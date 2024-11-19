@@ -1,13 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
 import { Contrato } from '../../contrato/entities/contrato.entity';
 
-@Entity()
+@Entity('Contratado')
 export class Contratado {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   ID_Contratado: string;
  
   @Column()
-  Codigo_Contrato : string;
+  Código_Contrato : string;
 
   @Column()
   ID_Provincia: string;

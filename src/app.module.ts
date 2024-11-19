@@ -52,7 +52,13 @@ import { SendEmail } from './send/send.module';
     VeterinariosModule,
     ContratosModule,
     ListadosModule,
+<<<<<<< Updated upstream
     SendEmail
+=======
+    ContratadoModule,
+    ProveedorServiciosComplementariosModule,
+    ProveedoresAlimentosModule
+>>>>>>> Stashed changes
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -14,17 +14,16 @@ export class ContratosService {
 
   create(createContratoDto: CreateContratoDto): Promise<Contrato> {
     const contrato: Contrato = new Contrato();
-    contrato.Codigo_Contrato = createContratoDto.Codigo_Contrato; 
-    contrato.Tipo_Contrato = createContratoDto.Tipo_Contrato;
+    contrato.Código_Contrato = createContratoDto.Código_Contrato; 
     contrato.Tipo_Servicio = createContratoDto.Tipo_Servicio;
-    contrato.Dirección = createContratoDto.Dirección;
-    contrato.Teléfono = createContratoDto.Teléfono;
+    contrato.Direccion = createContratoDto.Direccion;
+    contrato.Telefono = createContratoDto.Telefono;
     contrato.Email = createContratoDto.Email;
     contrato.Nombre_Responsable = createContratoDto.Nombre_Responsable;
     contrato.Fecha_Inicio = createContratoDto.Fecha_Inicio;
     contrato.Fecha_Terminacion = createContratoDto.Fecha_Terminacion;
-    contrato.Fecha_Consiliacion = createContratoDto.Fecha_Consiliacion;
-    contrato.Descripcion = createContratoDto.Descripcion;
+    contrato.Fecha_Conciliacion = createContratoDto.Fecha_Conciliacion;
+    contrato.Descripción = createContratoDto.Descripción;
 
     return this.contratoRepository.save(contrato);
   }
@@ -33,29 +32,28 @@ export class ContratosService {
     return this.contratoRepository.find();
   }
 
-  findOne(Codigo_Contrato: string): Promise<Contrato> {
-    return this.contratoRepository.findOneBy({ Codigo_Contrato });
+  findOne(Código_Contrato: string): Promise<Contrato> {
+    return this.contratoRepository.findOneBy({ Código_Contrato });
   }
 
-  update(Codigo_Contrato: string, updateContratoDto: UpdateContratoDto): Promise<Contrato> {
+  update(Código_Contrato: string, updateContratoDto: UpdateContratoDto): Promise<Contrato> {
     const contrato: Contrato = new Contrato();
-    contrato.Codigo_Contrato = Codigo_Contrato;
-    contrato.Tipo_Contrato = updateContratoDto.Tipo_Contrato;
+    contrato.Código_Contrato = Código_Contrato;
     contrato.Tipo_Servicio = updateContratoDto.Tipo_Servicio;
-    contrato.Dirección = updateContratoDto.Dirección;
-    contrato.Teléfono = updateContratoDto.Teléfono;
+    contrato.Direccion = updateContratoDto.Direccion;
+    contrato.Telefono = updateContratoDto.Telefono;
     contrato.Email = updateContratoDto.Email;
     contrato.Nombre_Responsable = updateContratoDto.Nombre_Responsable;
     contrato.Fecha_Inicio = updateContratoDto.Fecha_Inicio;
     contrato.Fecha_Terminacion = updateContratoDto.Fecha_Terminacion;
-    contrato.Fecha_Consiliacion = updateContratoDto.Fecha_Consiliacion;
-    contrato.Descripcion = updateContratoDto.Descripcion;
+    contrato.Fecha_Conciliacion = updateContratoDto.Fecha_Conciliacion;
+    contrato.Descripción = updateContratoDto.Descripción;
 
     return this.contratoRepository.save(contrato);
   }
 
-  remove(Codigo_Contrato: string) {
-    return this.contratoRepository.delete(Codigo_Contrato);
+  remove(Código_Contrato: string) {
+    return this.contratoRepository.delete(Código_Contrato);
   }
 }
 

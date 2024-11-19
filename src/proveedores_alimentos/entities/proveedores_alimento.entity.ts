@@ -1,13 +1,11 @@
 import  {Column, Entity, PrimaryColumn } from "typeorm";
 
-@Entity ("Proveedor_Alimentos")
+@Entity ("Proveedores_Alimentos")
 export class ProveedoresAlimento {
     @PrimaryColumn({type:'varchar'})
     ID_Contratado: String;
     @Column({type: 'varchar'})
     Dirección:String;
-    @Column({type:'int'})
-    Teléfono: number;
     @Column({type:'varchar'})
     Email: String;
     @Column({type:'varchar'})

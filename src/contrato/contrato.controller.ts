@@ -17,19 +17,19 @@ export class ContratosController {
     return this.contratosService.findAll();
   }
 
-  @Get(':Codigo_Contrato')
-  findOne(@Param('Codigo_Contrato') Codigo_Contrato: string) {
-    return this.contratosService.findOne(Codigo_Contrato);
+  @Get(':Código_Contrato')
+  findOne(@Param('Código_Contrato') Código_Contrato: string) {
+    return this.contratosService.findOne(Código_Contrato);
   }
 
-  @Put(':Codigo_Contrato')
-  update(@Param('Codigo_Contrato') Codigo_Contrato: string, @Body() updateContratoDto: UpdateContratoDto) {
-    return this.contratosService.update(Codigo_Contrato, updateContratoDto);
+  @Put(':Código_Contrato')
+  update(@Param('Código_Contrato') Código_Contrato: string, @Body() updateContratoDto: UpdateContratoDto) {
+    return this.contratosService.update(Código_Contrato, updateContratoDto);
   }
 
-  @Delete(':Codigo_Contrato')
-  remove(@Param('Codigo_Contrato') Codigo_Contrato: string) {
-    return this.contratosService.remove(Codigo_Contrato);
+  @Delete(':Código_Contrato')
+  remove(@Param('Código_Contrato') Código_Contrato: string) {
+    return this.contratosService.remove(Código_Contrato);
   }
 }
 

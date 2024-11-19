@@ -1,6 +1,6 @@
 import  {Column, Entity, PrimaryColumn } from "typeorm";
 
-@Entity ("Veterinario")
+@Entity ("Veterinarios")
 export class Veterinario {
     @PrimaryColumn({type:'varchar'})
     ID_Contratado: String;
@@ -21,4 +21,4 @@ export class Veterinario {
     @Column({type:'varchar'})
     Modalidad_Servicio_Veterinario: String;
 
-}
+}   

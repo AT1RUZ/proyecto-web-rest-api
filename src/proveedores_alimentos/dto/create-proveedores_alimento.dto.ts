@@ -20,7 +20,7 @@ export class CreateProveedoresAlimentoDto {
 
     @IsNotEmpty()
     @IsNumber()
-    Teléfono: number;
+    Telefono: number;
 
     @IsNumber()
     @IsString() 

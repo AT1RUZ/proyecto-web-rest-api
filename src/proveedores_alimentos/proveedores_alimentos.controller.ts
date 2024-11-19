@@ -9,31 +9,31 @@ import { Role } from 'src/auth/enums/role.enum';
 export class ProveedoresAlimentosController {
   constructor(private readonly proveedoresAlimentosService: ProveedoresAlimentoService) {}
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Post()
   create(@Body() createProveedoresAlimentoDto: CreateProveedoresAlimentoDto) {
     return this.proveedoresAlimentosService.create(createProveedoresAlimentoDto);
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Get()
   findAll() {
     return this.proveedoresAlimentosService.findAll();
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.proveedoresAlimentosService.findOne(id);
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProveedoresAlimentoDto: UpdateProveedoresAlimentoDto) {
     return this.proveedoresAlimentosService.update(id, updateProveedoresAlimentoDto);
   }
 
-  @Auth(Role.ADMIN)
+  //@Auth(Role.ADMIN)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.proveedoresAlimentosService.remove(id);

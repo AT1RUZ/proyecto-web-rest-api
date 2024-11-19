@@ -10,7 +10,7 @@ export class CreateContratadoDto {
 
     @IsNotEmpty()
     @IsString()
-    Codigo_Contrato: string;
+    Código_Contrato: string;
     
     @IsNotEmpty()
     @IsString()
