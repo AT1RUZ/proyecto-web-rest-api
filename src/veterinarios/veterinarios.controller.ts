@@ -5,41 +5,32 @@ import { UpdateVeterinarioDto } from './dto/update-veterinario.dto';
 import { Auth } from 'src/auth/decorators/auth.decorators';
 import { Role } from 'src/auth/enums/role.enum';
 
-@Controller('Veterinarios')
+@Auth(Role.ADMIN)
+@Controller("Vete")
 export class VeterinariosController {
   constructor(private readonly veterinariosService: VeterinariosService) {}
 
-  @Post()
-  
-  
+  @Post()  
   create(@Body() createVeterinarioDto: CreateVeterinarioDto) {
     return this.veterinariosService.create(createVeterinarioDto);
   }
 
   @Get()
-  
-
   findAll() {
     return this.veterinariosService.findAll();
   }
 
   @Get(':id')
-  
-
   findOne(@Param('id') id: string) {
     return this.veterinariosService.findOne(id);
   }
 
   @Put(':id')
-  
- 
   update(@Param('id') id: string, @Body() updateVeterinarioDto: UpdateVeterinarioDto) {
     return this.veterinariosService.update(+id, updateVeterinarioDto);
   }
 
-  @Delete(':id')
-  
- 
+  @Delete(':id') 
   remove(@Param('id') id: string) {
     return this.veterinariosService.remove(id);
   }
