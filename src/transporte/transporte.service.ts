@@ -19,6 +19,9 @@ export class TransporteService {
     transporte.Precio = Number(createTransporteDto.Precio);
     transporte.Vehículo = createTransporteDto.Vehículo;
 
+    console.log(createTransporteDto)
+    console.log(transporte)
+
     return this.transporteRepository.save(transporte);
   }
 

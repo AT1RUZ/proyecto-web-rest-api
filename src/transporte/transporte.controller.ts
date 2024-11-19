@@ -37,7 +37,6 @@ export class TransporteController {
   }
 
   @Put(':id')
-  
   update(
     @Param('id') id: string,
     @Body() updateTransporteDto: UpdateTransporteDto,
