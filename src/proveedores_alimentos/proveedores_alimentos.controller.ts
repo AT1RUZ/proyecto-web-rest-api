@@ -15,7 +15,7 @@ export class ProveedoresAlimentosController {
     return this.proveedoresAlimentosService.create(createProveedoresAlimentoDto);
   }
 
-  @Auth(Role.ADMIN)
+  // @Auth(Role.ADMIN)
   @Get()
   findAll() {
     return this.proveedoresAlimentosService.findAll();
